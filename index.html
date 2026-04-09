@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N K Srilatha — Fractional CFO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--teal:#1D9E75;--teal-light:#5DCAA5;--ink:#0d1a1f;--ink2:#0a1419;--text:#e8ede8;--muted:#7a9888;--faint:#3a5a4a;--border:rgba(93,202,165,0.18)}
+html,body{background:var(--ink);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh}
+.nav{padding:0.75rem 1.5rem;border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:flex-end}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);opacity:0.5}
+.page{max-width:960px;margin:0 auto;padding:2rem 1.5rem 0;display:grid;grid-template-columns:1fr 260px;gap:2.5rem;align-items:start}
+.hero-eyebrow{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal-light);margin-bottom:0.6rem}
+.hero-name{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;color:#f0ede6;font-weight:700;margin-bottom:0.3rem}
+.hero-role{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(1.2rem,2.5vw,1.7rem);color:var(--teal-light);margin-bottom:0.75rem;font-weight:400}
+.hero-summary{font-size:14px;line-height:1.9;color:var(--muted);margin-bottom:1.5rem}
+.cta-stack{display:flex;flex-direction:column;gap:10px;max-width:260px}
+.contact-btn{background:var(--teal);color:var(--ink);border:none;padding:11px 22px;font-size:13px;font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:0.04em;border-radius:2px;cursor:pointer;transition:background 0.2s;text-align:center;width:100%}
+.contact-btn:hover{background:var(--teal-light)}
+.li-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 22px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--teal-light);border:0.5px solid rgba(93,202,165,0.4);border-radius:2px;text-decoration:none;letter-spacing:0.03em;transition:border-color 0.2s,color 0.2s;width:100%}
+.li-btn:hover{border-color:var(--teal-light);color:#fff}
+.li-btn svg{width:14px;height:14px;flex-shrink:0}
+.contact-reveal{display:none;padding:1rem 1.3rem;border:0.5px solid var(--border);border-radius:4px;background:var(--ink2)}
+.contact-reveal.open{display:block}
+.c-item{display:flex;align-items:center;gap:10px;font-size:13px;color:#c8ddd4;margin-bottom:9px}
+.c-item:last-child{margin-bottom:0}
+.c-dot{width:5px;height:5px;background:var(--teal-light);border-radius:50%;flex-shrink:0}
+.c-link{color:var(--teal-light);text-decoration:none}
+.c-link:hover{text-decoration:underline}
+.sidebar{display:flex;flex-direction:column;gap:8px;padding-top:0.25rem}
+.sidebar-label{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#9eb5a8;font-weight:500;margin-bottom:0.5rem}
+.exp-card{background:var(--ink2);border:0.5px solid var(--border);border-radius:6px;padding:0.8rem 0.9rem;display:flex;align-items:flex-start;gap:10px;transition:border-color 0.2s}
+.exp-card:hover{border-color:var(--teal-light)}
+.exp-icon{width:30px;height:30px;border-radius:5px;background:rgba(29,158,117,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.exp-icon svg{width:15px;height:15px}
+.exp-title{font-size:12.5px;font-weight:500;color:#c8ddd4;margin-bottom:2px;line-height:1.3}
+.exp-sub{font-size:11px;color:#5a8070;line-height:1.4}
+.services{max-width:960px;margin:0 auto;padding:2rem 1.5rem 2.5rem}
+.sec-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal-light);margin-bottom:1.25rem;display:flex;align-items:center;gap:12px}
+.sec-label::after{content:'';flex:1;height:0.5px;background:var(--border)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden}
+.card{background:var(--ink);padding:1.3rem 1.2rem;transition:background 0.2s}
+.card:hover{background:var(--ink2)}
+.card-bar{width:28px;height:2px;background:var(--teal);margin-bottom:0.8rem}
+.card-title{font-family:'DM Serif Display',serif;font-size:0.95rem;color:#f0ede6;margin-bottom:0.4rem;line-height:1.3}
+.card-desc{font-size:12px;line-height:1.8;color:#5a7a6a}
+.why{max-width:960px;margin:0 auto;padding:0 1.5rem 2.5rem}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:10px;max-width:580px}
+.checklist li{display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:#9eb5a8;line-height:1.65}
+.chk{width:17px;height:17px;border:0.5px solid var(--teal);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.chk-dot{width:5px;height:5px;background:var(--teal);border-radius:50%}
+.footer{padding:1.75rem 1.5rem;border-top:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;max-width:960px;margin:0 auto}
+.footer-name{font-family:'DM Serif Display',serif;font-size:0.9rem;color:var(--faint)}
+.footer-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+.footer-link{font-size:12px;color:var(--faint);text-decoration:none}
+.footer-link:hover{color:var(--teal-light)}
+@media(max-width:660px){
+  .page{grid-template-columns:1fr;gap:2rem;padding:1.5rem 1rem 0}
+  .sidebar{flex-direction:row;flex-wrap:wrap;gap:8px}
+  .exp-card{flex:1 1 calc(50% - 4px);min-width:140px}
+  .cta-stack{max-width:100%}
+  .services{padding:1.5rem 1rem 2rem}
+  .why{padding:0 1rem 2rem}
+  .footer{padding:1.5rem 1rem;flex-direction:column;align-items:flex-start;gap:0.75rem}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-dot"></div></nav>
+
+<div class="page">
+  <div>
+    <p class="hero-eyebrow">Chartered Accountant · Strategic Finance</p>
+    <h1 class="hero-name">N K Srilatha</h1>
+    <p class="hero-role">Fractional CFO</p>
+    <p class="hero-summary">I work with founders and leadership teams as an embedded finance partner — bringing the rigour of a full-time CFO without the overhead. My focus is on building the financial discipline, controls, and clarity that let your business grow with confidence, not just survive the next fundraise.</p>
+    <div class="cta-stack">
+      <button class="contact-btn" id="ctabtn" onclick="var r=document.getElementById('cr');r.classList.toggle('open');document.getElementById('ctabtn').textContent=r.classList.contains('open')?'Close \u2715':'Get in touch'">Get in touch</button>
+      <div class="contact-reveal" id="cr">
+        <div class="c-item"><div class="c-dot"></div><a href="mailto:srilatha.krishnaswamy@gmail.com" class="c-link">srilatha.krishnaswamy@gmail.com</a></div>
+        <div class="c-item"><div class="c-dot"></div><a href="tel:+919980310173" class="c-link">+91 99803 10173</a></div>
+      </div>
+      <a href="https://www.linkedin.com/in/srilatha-krishnaswamy/" target="_blank" class="li-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <p class="sidebar-label">Areas of expertise</p>
+    <div class="exp-card"><div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 4-6"/></svg></div><div><div class="exp-title">Financial Modelling</div><div class="exp-sub">Unit economics, scenarios, runway</div></div></div>
+    <div class="exp-card"><div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><div class="exp-title">Finance Function Setup</div><div class="exp-sub">Controls, MIS, reporting structure</div></div></div>
+    <div class="exp-card"><div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></div><div><div class="exp-title">Accounting &amp; Bookkeeping</div><div class="exp-sub">Agency liaison, accurate books</div></div></div>
+    <div class="exp-card"><div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="exp-title">Compliance &amp; Tax</div><div class="exp-sub">GST, direct tax, statutory filings</div></div></div>
+    <div class="exp-card"><div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><div class="exp-title">Performance Management</div><div class="exp-sub">KPIs, dashboards, board reporting</div></div></div>
+    <div class="exp-card"><div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><div class="exp-title">Fundraise &amp; Valuation</div><div class="exp-sub">Investor models, due diligence</div></div></div>
+    <div class="exp-card"><div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg></div><div><div class="exp-title">Business Intelligence</div><div class="exp-sub">Power BI, Tableau, AI analytics</div></div></div>
+    <div class="exp-card"><div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5DCAA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></div><div><div class="exp-title">M&amp;A &amp; Due Diligence</div><div class="exp-sub">Deal structuring, valuation review</div></div></div>
+  </div>
+</div>
+
+<section class="services">
+  <div class="sec-label">What I do</div>
+  <div class="grid">
+    <div class="card"><div class="card-bar"></div><div class="card-title">Financial Modelling &amp; Planning</div><div class="card-desc">Bottom-up models grounded in your actual business — unit economics, scenario analysis, and cash runway visibility. Built to be used every week, not just shown to investors.</div></div>
+    <div class="card"><div class="card-bar"></div><div class="card-title">Finance Function Setup</div><div class="card-desc">Accounting structure, internal controls, reporting rhythms, and MIS dashboards. The foundational infrastructure that keeps a growing company in control of its numbers.</div></div>
+    <div class="card"><div class="card-bar"></div><div class="card-title">Accounting &amp; Bookkeeping</div><div class="card-desc">I liaise with your accounting agency to ensure the books are accurate, timely, and structured in a way that serves decision-making — not just compliance. You get one accountable point of contact.</div></div>
+    <div class="card"><div class="card-bar"></div><div class="card-title">Compliance &amp; Tax</div><div class="card-desc">GST, direct tax, statutory filings, and regulatory readiness — co-ordinated across your advisors so nothing falls through the cracks as your business scales.</div></div>
+    <div class="card"><div class="card-bar"></div><div class="card-title">Performance Management</div><div class="card-desc">KPIs that reflect your true business drivers. Dashboards that surface what matters. Board-level reporting that builds confidence without burying your team in data.</div></div>
+    <div class="card"><div class="card-bar"></div><div class="card-title">Fundraise &amp; Valuation</div><div class="card-desc">Investor-grade financials, valuation models, and due diligence support. Your numbers tell a story — I make sure it is the right one, and that it holds up under scrutiny.</div></div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="sec-label">Why it matters</div>
+  <ul class="checklist">
+    <li><div class="chk"><div class="chk-dot"></div></div>Finance that informs every business decision, not just investor presentations.</li>
+    <li><div class="chk"><div class="chk-dot"></div></div>Controls and processes that scale with you from early stage through Series A and beyond.</li>
+    <li><div class="chk"><div class="chk-dot"></div></div>Compliance built in from Day 1 — not retrofitted under pressure before a raise.</li>
+    <li><div class="chk"><div class="chk-dot"></div></div>A single, accountable finance lead across modelling, books, tax, and reporting.</li>
+    <li><div class="chk"><div class="chk-dot"></div></div>AI-assisted analytics and forecasting tools that improve accuracy over time.</li>
+  </ul>
+</section>
+
+<footer class="footer">
+  <span class="footer-name">N K Srilatha · Fractional CFO</span>
+  <div class="footer-links">
+    <a href="mailto:srilatha.krishnaswamy@gmail.com" class="footer-link">srilatha.krishnaswamy@gmail.com</a>
+    <a href="tel:+919980310173" class="footer-link">+91 99803 10173</a>
+    <a href="https://www.linkedin.com/in/srilatha-krishnaswamy/" target="_blank" class="footer-link">LinkedIn ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>
